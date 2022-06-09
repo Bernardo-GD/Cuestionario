@@ -1,0 +1,1001 @@
+<nav class="navbar navbar-expand-xl navbar-dark bg-primary bg-gradient fixed-top ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/ITSM.png" alt="" width="46" height="40" class="d-inline-block align-text-top mx-5 bg-white img-fluid rounded-3"/>
+      Cuestionario
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#datos">Datos generales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#reclutamiento">Reclutamiento</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#formacion">Formación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#permanencia">Permanencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#corresponsabilidad">Corresponsabilidad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#acoso">Acoso</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#accesibilidad">Accesibilidad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#respeto">Respeto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#condiciones">Condiciones</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="mx-5 py-3 mt-5 indicaciones  ">
+  <h3 class="text-center text-white">Indicaciones</h3>
+  <p class="text-md-center text-center fs-4 text-white">
+      Por favor seleccione la respuesta a cada reactivo de manera franca, con el objeto de que este ejercicio aporte lo necesario
+      para su mejor aprovechamiento.
+  </p>
+</div>
+
+<form  [formGroup]="createRespuesta" (ngSubmit)="agregarRespuesta()" >
+    
+    <!--Area-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded"  >
+
+        <h4 class="text-center">Seleecione su área</h4>
+
+        <div class="container-sm row  justify-content-sm-center mt-3">
+            <div class="form-check-inline  col-6 col-sm-3">
+                <input class="form-check-input ms-sm-5" type="radio" formControlName="area" id="r_docente" value="docente" required/>
+                <label class="form-check-label ps-sm-3 " for="r_docente">Docente</label>
+            </div>
+    
+            <div class="form-check-inline  col-6 col-sm-3" >
+                <input class="form-check-input ms-sm-5" type="radio" formControlName="area" id="r_administrativo" value="administrativo" required/>
+                <label class="form-check-label ps-sm-3 " for="r_administrativo" >Administrativo</label>
+            </div>
+    
+            <div class="form-check-inline col-6 col-sm-3 " >
+                <input class="form-check-input ms-sm-5" type="radio" formControlName="area" id="r_Sgenerales" value="generales" required/>
+                <label class="form-check-label ps-sm-3" for="r_Sgenerales" >Serv. Generales</label>
+                <div class="invalid-feedback">More example invalid feedback text</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Datos generales-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="datos">
+        <h4 class="text-center">Datos Generales</h4>
+        <!--SEXO-->
+        <div class="container-sm  mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Sexo</h4>
+            <div class="container row justify-content-sm-center mt-3">
+                <div class="form-check-inline col-6 col-sm-3   ">
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="sexo" id="r_mujer" value="mujer" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_mujer">Mujer</label>
+                </div>
+        
+                <div class="form-check-inline col-6 col-sm-3   " >
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="sexo" id="r_hombre" value="hombre" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_hombre" >Hombre</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <!--EDAD-->
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Edad</h4>
+            <div class="container-sm row justify-content-sm-center mt-3">
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="edad" id="r_edad1" value="1529" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_edad1">15 a 29</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="edad" id="r_edad2" value="3039" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_edad2">30 a 39</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="edad" id="r_edad3" value="4049" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_edad3">40 a 49</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="edad" id="r_edad4" value="5059" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_edad4">50 a 59</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="edad" id="r_edad5" value="6000" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_edad5">60 y más</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <!--Estado civil o conyugal-->
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Estado civil o conyugal</h4>
+            <div class="container-sm row justify-content-sm-center mt-3">
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="civil" id="r_ECivil1" value="soltero" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_ECivil1">Soltera (o)</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="civil" id="r_ECivil2" value="casado" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_ECivil2">Casada (o)</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="civil" id="r_ECivil3" value="union" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_ECivil3">Union Libre</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="civil" id="r_ECivil4" value="divorcio" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_ECivil4">Divorciada (o)</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="civil" id="r_ECivil5" value="viudo" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_ECivil5">Viuda</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <!--Antiguedad-->
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Años de antigüedad en el centro de trabajo</h4>
+            <div class="container-sm row justify-content-sm-center mt-3">
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="antiguedad" id="r_antiguedad1" value="anti1" required/>
+                    <label class="form-check-label ps-sm-1" for="r_antiguedad1">Menos de 1 año</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="antiguedad" id="r_antiguedad2" value="anti2" required/>
+                    <label class="form-check-label ps-sm-1" for="r_antiguedad2">De 1 a 3 años</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="antiguedad" id="r_antiguedad3" value="anti3" required/>
+                    <label class="form-check-label ps-sm-1" for="r_antiguedad3">De 4 a 9 años</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="antiguedad" id="r_antiguedad4" value="anti4" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_antiguedad4">Más de 10 años</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <!--Escolaridad-->
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Escolaridad</h4>
+
+            <div class="container-sm row justify-content-sm-center  mt-3">
+                <div class="container-sm row justify-content-sm-center">
+                    <div class="form-check-inline col-6 col-sm-2  ">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios1" value="estudios1" required/>
+                        <label class="form-check-label ps-sm-3 " for="r_estudios1">Sin</label>
+                    </div>
+                    <div class="form-check-inline col-6 col-sm-2  ">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios2" value="estudios2" required/>
+                        <label class="form-check-label ps-sm-3 " for="r_estudios2">Primaria</label>
+                    </div>
+                    <div class="form-check-inline col-6 col-sm-2 ">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios3" value="estudios3" required/>
+                        <label class="form-check-label ps-sm-3 " for="r_estudios3">Secundaria</label>
+                    </div>
+                    <div class="form-check-inline col-6 col-sm-2 ">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios4" value="estudios4" required/>
+                        <label class="form-check-label ps-sm-1 " for="r_estudios4">Bachillerato</label>
+                    </div>
+                </div>
+
+                <div class="container-sm row justify-content-sm-center">
+                    <div class="form-check-inline col-6 col-sm-2">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios5" value="estudios5" required/>
+                        <label class="form-check-label ps-sm-3 " for="r_estudios5">Carrera ténica</label>
+                    </div>
+                    <div class="form-check-inline col-6 col-sm-2">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios6" value="estudios6" required/>
+                        <label class="form-check-label ps-sm-3 " for="r_estudios6">Licenciatura</label>
+                    </div>
+                    <div class="form-check-inline col-6 col-sm-2">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios7" value="estudios7" required/>
+                        <label class="form-check-label ps-sm-3 " for="r_estudios7">Maestría</label>
+                    </div>
+                    <div class="form-check-inline col-6 col-sm-2">
+                        <input class="form-check-input " type="radio" formControlName="escolaridad" id="r_estudios8" value="estudios8" required/>
+                        <label class="form-check-label ps-sm-1 " for="r_estudios8">Doctorado</label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <!--Horario de trabajo-->
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Horario de trabajo</h4>
+            <div class="container-sm row justify-content-sm-center mt-3">
+                <div class="col-6 col-sm-2 px-5 ">
+                    <label class="" for="hora1">De</label>
+                    <input class="" type="time" formControlName="hora1" id="hora1" required/>
+                </div>
+                <div class="col-6 col-sm-2 px-5">
+                    <label class="" for="hora2">A</label>
+                    <input class="" type="time" formControlName="hora2" id="hora2" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <!--Tipo de plaza-->
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+            <h4 class="text-center">Tipo de plaza</h4>
+            <div class="container-sm row justify-content-sm-center mt-3">
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="plaza" id="r_plaza1" value="plaza1" required/>
+                    <label class="form-check-label ps-sm-1 " for="r_plaza1">Base</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="plaza" id="r_plaza2" value="plaza2" required/>
+                    <label class="form-check-label ps-ms-1 " for="r_plaza2">Honorarios</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="plaza" id="r_plaza3" value="plaza3" required/>
+                    <label class="form-check-label ps-ms-1 " for="r_plaza3">Confianza</label>
+                </div>
+                <div class="form-check-inline col-6 col-sm-2  ">
+                    <input class="form-check-input " type="radio" formControlName="plaza" id="r_plaza4" value="plaza4" required/>
+                    <label class="form-check-label ps-ms-1 " for="r_plaza4">Otro</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-1"></div>
+
+        <div class="container-sm mt-3 pb-3 border border-secondary">
+          <div>
+            <p class="text-md-center text-center fs-6">
+              Solo para fines estadísticos de igualdad laboral y no discriminación, solicitamos conteste la siguiente pregunta de manera voluntaria
+            </p>
+            <p class="text-md-center text-center fs-6">
+              Formas parte de alguno de los siguientes sectores de la población:
+            </p>
+              <div class="container-sm row  justify-content-sm-center mt-3">
+                <div class="form-check-inline  col-6 col-sm-3">
+                  <input class="form-check-input ms-sm-5" type="radio" formControlName="discriminacion" id="r_d1" value="d1" required/>
+                  <label class="form-check-label ps-sm-3 " for="r_d1">Diversidad sexual</label>
+                </div>
+    
+                <div class="form-check-inline  col-6 col-sm-3" >
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="discriminacion" id="r_d2" value="d2" required/>
+                    <label class="form-check-label ps-sm-3 " for="r_d2" >Indigenas</label>
+                </div>
+      
+                <div class="form-check-inline col-6 col-sm-3 " >
+                    <input class="form-check-input ms-sm-5" type="radio" formControlName="discriminacion" id="r_d3" value="d3" required/>
+                    <label class="form-check-label ps-sm-3" for="r_d3" >Afrodescendientes</label>
+                </div>
+
+                <div class="form-check-inline col-6 col-sm-3 " >
+                  <input class="form-check-input ms-sm-5" type="radio" formControlName="discriminacion" id="r_d4" value="d4" required/>
+                  <label class="form-check-label ps-sm-3" for="r_d4" >Adultos mayores</label>
+                </div>
+
+                <div class="form-check-inline col-6 col-sm-3 " >
+                  <input class="form-check-input ms-sm-5" type="radio" formControlName="discriminacion" id="r_d5" value="d5" required/>
+                  <label class="form-check-label ps-sm-3" for="r_d5" >Otros:</label>
+                </div>
+
+                <div class="form-check-inline col-6 col-sm-3 " >
+                  <input class="form-check-input ms-sm-5" type="radio" formControlName="discriminacion" id="r_d6" value="d6" required/>
+                  <label class="form-check-label ps-sm-3" for="r_d6" >No aplica</label>
+                </div>
+
+            </div>
+
+            <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Reactivos</th>
+                      <th scope="col">Si</th>
+                      <th scope="col">No</th>
+                      <th scope="col">No sé</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>En su centro de trabajo  existe una política de igualdad laboral y no discriminación</td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion1" id="r_disc1_1" value="1" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion1" id="r_disc1_2" value="2" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion1" id="r_disc1_3" value="3" required/></td>
+                    </tr>
+                    <tr>
+                      <td>En su centro de trabajo existe un código de ética y/o conducta</td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion2" id="r_disc2_1" value="1" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion2" id="r_disc2_2" value="2" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion2" id="r_disc2_3" value="3" required/></td>
+                    </tr>
+                    <tr>
+                      <td>En su centro de trabajo existe un comité de igualdad y no discriminación</td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion3" id="r_disc3_1" value="1" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion3" id="r_disc3_2" value="2" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion3" id="r_disc3_3" value="3" required/></td>
+                    </tr>
+                    <tr>
+                      <td>En su centro de trabajo existe un mecanismo para prevenir, atender y sancionar las prácticas de discriminación y violencia laboral</td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion4" id="r_disc4_1" value="1" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion4" id="r_disc4_2" value="2" required/></td>
+                      <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="discriminacion4" id="r_disc4_3" value="3" required/></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+            
+          </div>
+        </div>
+
+    </div>
+
+    <!--Reclutamiento y selección de personal-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="reclutamiento">
+        <h4 class="text-center">Reclutamiento y selección de personal</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Si</th>
+                    <th scope="col">No</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Para su contratación fue más importante ser mujer u hombre que sus habilidades profesionales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento1" id="r_reclu1_Si" value="si" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento1" id="r_reclu1_No" value="no" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>En su centro de trabajo el proceso de contratación favorece más a personas jóvenes.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento2" id="r_reclu2_Si" value="si" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento2" id="r_reclu2_No" value="no" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>En el momento de su contratación, su edad fue determinante.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento3" id="r_reclu3_Si" value="si" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento3" id="r_reclu3_No" value="no" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Para su contratación fue determinante su apariencia física.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento4" id="r_reclu4_Si" value="si" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="reclutamiento4" id="r_reclu4_No" value="no" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Formación y capacitación-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="formacion">
+        <h4 class="text-center">Formación y capacitación</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr class="">
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>En su centro de trabajo las oportunidades de desarrollo laboral solo las reciben unas cuántas personas privilegiadas.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion1" id="r_capa1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion1" id="r_capa1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion1" id="r_capa1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion1" id="r_capa1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>En su centro de trabajo mujeres y hombres tienen por igual oportunidades de ascenso y capacitación</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion2" id="r_capa2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion2" id="r_capa2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion2" id="r_capa2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion2" id="r_capa2_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>En su centro de trabajo se cuenta con programas de capacitación en materia de igualdad laboral y no discriminación.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion3" id="r_capa3_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion3" id="r_capa3_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion3" id="r_capa3_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion3" id="r_capa3_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>En los últimos 12 meses usted ha participado en programas de capacitación.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion4" id="r_capa4_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion4" id="r_capa4_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion4" id="r_capa4_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="capacitacion4" id="r_capa4_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Permanencia y ascenso-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="permanencia">
+        <h4 class="text-center">Permanencia y ascenso</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>En su centro de trabajo para lograr la contratación, una promoción o un ascenso cuentan más las recomendaciones que los conocimientos y capacidades de la persona.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia1" id="r_permanencia1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia1" id="r_permanencia1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia1" id="r_permanencia1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia1" id="r_permanencia1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>En su centro de trabajo se ha despedido a alguna mujer por embarazo u orillado a renunciar al regresar de su licencia de maternidad.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia2" id="r_permanencia2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia2" id="r_permanencia2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia2" id="r_permanencia2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia2" id="r_permanencia2_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>En su centro de trabajo la competencia por mejores puestos, condiciones laborales o salariales es justas</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia3" id="r_permanencia3_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia3" id="r_permanencia3_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia3" id="r_permanencia3_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia3" id="r_permanencia3_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>En su centro de trabajo mujeres y hombres tienen las mismas oportunidades para ocupar puestos de decisión.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia4" id="r_permanencia4_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia4" id="r_permanencia4_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia4" id="r_permanencia4_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia4" id="r_permanencia4_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">13</th>
+                    <td>En su centro de trabajo se cuenta con un sistema de evaluación de desempeño del personal.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia5" id="r_permanencia5_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia5" id="r_permanencia5_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia5" id="r_permanencia5_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia5" id="r_permanencia5_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">14</th>
+                    <td>En los últimos 12 meses le han realizado una evaluación de desempeño.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia6" id="r_permanencia6_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia6" id="r_permanencia6_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia6" id="r_permanencia6_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="permanencia6" id="r_permanencia6_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Corresponsabilidad en la vida laboral, familiar y personal-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="corresponsabilidad">
+        <h4 class="text-center">Corresponsabilidad en la vida laboral, familiar y personal</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">15</th>
+                    <td>En su centro de trabajo tanto mujeres como hombres tienen las mismas facilidades para atender problemas familiares no previstos.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad1" id="r_corre1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad1" id="r_corre1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad1" id="r_corre1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad1" id="r_corre1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">16</th>
+                    <td>En su centro de trabajo las mujeres embarazadas enfrentan un clima laboral hostil.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad2" id="r_corre2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad2" id="r_corre2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad2" id="r_corre2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad2" id="r_corre2_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">17</th>
+                    <td>En su centro de trabajo las personas que se hacen cargo de personas o familiares que requieren cuidados enfrentan un clima laboral hostil.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad3" id="r_corre3_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad3" id="r_corre3_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad3" id="r_corre3_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad3" id="r_corre3_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">18</th>
+                    <td>En su centro de trabajo los hombres cuentan con licencia de paternidad por nacimiento o adopción de una hija(o).</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad4" id="r_corre4_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad4" id="r_corre4_1" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad4" id="r_corre4_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad4" id="r_corre4_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">19</th>
+                    <td>En su centro de trabajo la licencia de paternidad se otorga por más de cinco días.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad5" id="r_corre5_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad5" id="r_corre5_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad5" id="r_corre5_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad5" id="r_corre5_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">20</th>
+                    <td>En su centro de trabajo se  otorgan permisos para atender situaciones familiares como cuidado de hijas e hijos, personas enfermas o personas adultas mayores.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad6" id="r_corre6_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad6" id="r_corre6_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad6" id="r_corre6_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad6" id="r_corre6_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">21</th>
+                    <td>En su centro de trabajo existen convenios con prestadores de servicios que contemplen beneficios para el personal tales como: lavanderías, comedores, planchadurías, transporte, entre otros.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad7" id="r_corre7_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad7" id="r_corre7_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad7" id="r_corre7_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad7" id="r_corre7_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">22</th>
+                    <td>En su centro de trabajo, si usted decidiera usar las opciones de trabajo flexibles ¿se cuestionaría su compromiso ante su trabajo?</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad8" id="r_corre8_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad8" id="r_corre8_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad8" id="r_corre8_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad8" id="r_corre8_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">23</th>
+                    <td>En los últimos 12 meses le han realizado una evaluación de desempeño.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad9" id="r_corre9_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad9" id="r_corre9_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad9" id="r_corre9_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="corresponsabilidad9" id="r_corre9_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Clima laboral libre de violencia-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="corresponsabilidad">
+      <h4 class="text-center">Clima laboral libre de violencia</h4>
+      <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Reactivos</th>
+                  <th scope="col">Nunca</th>
+                  <th scope="col">Algunas veces</th>
+                  <th scope="col">Con frecuencia</th>
+                  <th scope="col">Siempre</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">24</th>
+                  <td>Usted siente que se le trata con respeto en su trabajo actual.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima1" id="r_clima1_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima1" id="r_clima1_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima1" id="r_clima1_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima1" id="r_clima1_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">25</th>
+                  <td>En su centro de trabajo quienes realizan tareas personales para las y los jefes logran privilegios.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima2" id="r_clima2_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima2" id="r_clima2_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima2" id="r_clima2_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima2" id="r_clima2_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">26</th>
+                  <td>En su centro de trabajo todas las personas que laboran obtienen un trato digno y decente.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima3" id="r_clima3_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima3" id="r_clima3_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima3" id="r_clima3_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima3" id="r_clima3_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">27</th>
+                  <td>En su centro de trabajo las valoraciones que se realizan a sus actividades dependen más de la calidad y responsabilidad que de cualquier otra cuestión personal.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima4" id="r_clima4_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima4" id="r_clima4_1" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima4" id="r_clima4_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima4" id="r_clima4_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">28</th>
+                  <td>En su centro de trabajo, en general hay personas que discriminan, tratan mal o le faltan al respeto a sus compañeras (os), colegas o subordinadas (os)</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima5" id="r_clima5_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima5" id="r_clima5_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima5" id="r_clima5_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima5" id="r_clima5_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">29</th>
+                  <td>En su centro de trabajo debido a sus características personales hay personas que sufren un trato inferior o de burla.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima6" id="r_clima6_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima6" id="r_clima6_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima6" id="r_clima6_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima6" id="r_clima6_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">30</th>
+                  <td>En su centro de trabajo las y los superiores reciben un trato mucho más respetuoso que subordinados (as) y personal administrativo.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima7" id="r_clima7_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima7" id="r_clima7_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima7" id="r_clima7_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima7" id="r_clima7_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">31</th>
+                  <td>En su centro de trabajo las y los superiores están abiertos a la comunicación con el personal.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima8" id="r_clima8_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima8" id="r_clima8_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima8" id="r_clima8_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima8" id="r_clima8_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">32</th>
+                  <td>En su centro de trabajo se da un trato inferior o discriminatorio a las personas con los más bajos niveles de sueldo.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima9" id="r_clima9_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima9" id="r_clima9_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima9" id="r_clima9_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima9" id="r_clima9_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">33</th>
+                  <td>En su centro de trabajo existen campañas de difusión internas de promoción de la igualdad laboral y no discriminación.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima10" id="r_clima10_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima10" id="r_clima10_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima10" id="r_clima10_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima10" id="r_clima10_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">34</th>
+                  <td>En su centro de trabajo se toman acciones como: asilamiento de sus compañeras(os), cambio de lugar repentinamente, falta de instrucciones, menosprecio del esfuerzo o propuestas, imposición de tareas sin los medios para realizarlas.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima11" id="r_clima11_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima11" id="r_clima11_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima11" id="r_clima11_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima11" id="r_clima11_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">35</th>
+                  <td>En su centro de trabajo las funciones y tareas se transmiten de manera clara y precisa.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima12" id="r_clima12_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima12" id="r_clima12_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima12" id="r_clima12_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima12" id="r_clima12_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">36</th>
+                  <td>En su centro de trabajo las cargas de trabajo se distribuyen de acuerdo a la responsabilidad del cargo.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima13" id="r_clima13_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima13" id="r_clima13_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima13" id="r_clima13_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima13" id="r_clima13_4" value="4" required/></td>
+                </tr>
+                <tr>
+                  <th scope="row">37</th>
+                  <td>Si manifiesto mi preocupación sobre algún asunto relacionado con la igualdad de género o prácticas discriminatorias, se le da seguimiento.</td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima14" id="r_clima14_1" value="1" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima14" id="r_clima14_2" value="2" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima14" id="r_clima14_3" value="3" required/></td>
+                  <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="clima14" id="r_clima14_4" value="4" required/></td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
+
+    <!--Acoso y hostigamiento-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="acoso">
+        <h4 class="text-center">Acoso y hostigamiento</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">38</th>
+                    <td>En su centro de trabajo ha recibido, comentarios sugestivos o sexistas, bromas ofensivas, miradas obscenas o petición de pláticas indeseables relacionadas con asuntos sexuales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso1" id="r_acoso1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso1" id="r_acoso1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso1" id="r_acoso1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso1" id="r_acoso1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">39</th>
+                    <td>En su centro de trabajo ha recibido proposiciones o peticiones directas o indirectas para establecer una relación sexual.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso2" id="r_acoso2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso2" id="r_acoso2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso2" id="r_acoso2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso2" id="r_acoso2_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">40</th>
+                    <td>En su centro de trabajo ha vivido contacto físico sexual no deseado.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso3" id="r_acoso3_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso3" id="r_acoso3_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso3" id="r_acoso3_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso3" id="r_acoso3_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">41</th>
+                    <td>En su centro de trabajo se logran recompensas o incentivos laborales a cambio de favores sexuales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso4" id="r_acoso4_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso4" id="r_acoso4_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso4" id="r_acoso4_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso4" id="r_acoso4_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">42</th>
+                    <td>En su centro de trabajo se reciben amenazas con daños o castigos en caso de no acceder a proporcionar  favores sexuales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso5" id="r_acoso5_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso5" id="r_acoso5_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso5" id="r_acoso5_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso5" id="r_acoso5_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">43</th>
+                    <td>En su centro de trabajo ha recibido represalias sin razón o amenazas con relación a su permanencia en el trabajo.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso6" id="r_acoso5_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso6" id="r_acoso6_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso6" id="r_acoso6_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso6" id="r_acoso6_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">44</th>
+                    <td>En caso de que haya sido víctima de acoso u hostigamiento sexual, en su centro de trabajo resolvieron satisfactoriamente su caso al interior o le canalizaron con las autoridades competentes.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso7" id="r_acoso7_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso7" id="r_acoso7_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso7" id="r_acoso7_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso7" id="r_acoso7_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">45</th>
+                    <td>En caso de ser acosada (o) u hostigada (o) sexual o laboralmente en su centro de trabajo sabe a qué autoridad puede dirigirse para denunciarlo.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso8" id="r_acoso8_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso8" id="r_acoso8_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso8" id="r_acoso8_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="acoso8" id="r_acoso8_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Accesibilidad-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="accesibilidad">
+        <h4 class="text-center">Accesibilidad</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">46</th>
+                    <td>En su centro de trabajo se cuenta con el espacio, mobiliario y equipo adecuado para personas con discapacidad</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad1" id="r_acce1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad1" id="r_acce1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad1" id="r_acce1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad1" id="r_acce1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">47</th>
+                    <td>Considera que las instalaciones de su centro de trabajo son adecuadas y accesibles para personas con discapacidad (rampas, estacionamiento, sanitarios, oficinas, pasillos, escaleras, elevadores, entre otros)</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad2" id="r_acce2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad2" id="r_acce2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad2" id="r_acce2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad2" id="r_acce2_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">48</th>
+                    <td>En su centro de trabajo se cuenta con los medios tecnológicos y de comunicación accesible para que cualquier persona con discapacidad desempeñe sus actividades de manera óptima.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad3" id="r_acce3_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad3" id="r_acce3_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad3" id="r_acce3_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad3" id="r_acce3_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">49</th>
+                    <td>En su centro de trabajo se contemplan mecanismos o políticas de inclusión laboral para personas con discapacidad, personas adultas mayores o con VIH, entre otras.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad4" id="r_acce4_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad4" id="r_acce4_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad4" id="r_acce4_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad4" id="r_acce4_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">50</th>
+                    <td>En su centro de trabajo se reciben amenazas con daños o castigos en caso de no acceder a proporcionar  favores sexuales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad5" id="r_acce5_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad5" id="r_acce5_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad5" id="r_acce5_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="accesibilidad5" id="r_acce5_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Respeto a la diversidad-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="respeto">
+        <h4 class="text-center">Respeto a la diversidad</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">51</th>
+                    <td>En su centro de trabajo hay un ambiente de respeto y no discriminación hacia las diferencias y preferencias sexuales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto1" id="r_respe1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto1" id="r_respe1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto1" id="r_respe1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto1" id="r_respe1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">52</th>
+                    <td>En su centro de trabajo ha sido testigo de actos discriminatorios por ser mujer u hombre, por edad, apariencia, discapacidad, entre otros.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto2" id="r_respe2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto2" id="r_respe2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto2" id="r_respe2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="respeto2" id="r_respe2_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--Condiciones generales de trabajo-->
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded" id="condiciones">
+        <h4 class="text-center">Condiciones generales de trabajo</h4>
+        <div class="container-sm mt-3 pb-3 border border-secondary table-responsive-sm">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reactivos</th>
+                    <th scope="col">Nunca</th>
+                    <th scope="col">Algunas veces</th>
+                    <th scope="col">Con frecuencia</th>
+                    <th scope="col">Siempre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">53</th>
+                    <td>En su centro de trabajo se proporcionan las prestaciones de ley.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones1" id="r_condi1_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones1" id="r_condi1_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones1" id="r_condi1_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones1" id="r_condi1_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">54</th>
+                    <td>En su centro de trabajo las y los directivos apoyan la igualdad y no discriminación</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones2" id="r_condi2_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones2" id="r_condi2_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones2" id="r_condi2_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones2" id="r_condi2_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">55</th>
+                    <td>En su centro de trabajo los mecanismos utilizados para asegurar la igualdad y no discriminación son eficaces.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones3" id="r_condi3_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones3" id="r_condi3_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones3" id="r_condi3_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones3" id="r_condi3_4" value="4" required/></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">56</th>
+                    <td>En su centro de trabajo se recibe un salario igual por igual trabajo sin importar sexo, apariencia, edad u otras características personales.</td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones4" id="r_condi4_1" value="1" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones4" id="r_condi4_2" value="2" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones4" id="r_condi4_3" value="3" required/></td>
+                    <td><input class="form-check-input col-4 mx-auto" type="radio" formControlName="condiciones4" id="r_condi4_4" value="4" required/></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <div class="container-sm shadow p-3 mb-5 bg-body rounded d-flex justify-content-center ">
+      <button class="btn btn-primary" type="submit" style="cursor: pointer"> Enviar Cuestionario</button>
+      <div *ngIf="loading" class="spinner-border float-end" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+</form>

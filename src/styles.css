@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+
+a.nav-link{
+    border-radius: 2em;
+}
+a.nav-link:hover{
+    background-color: rgb(0, 50, 151);
+}
+
+body{
+    /*Con esta opción le aplico un gradiante a la imagen*/
+    /*background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/fondoPagina.jpg');*/
+    /*con esta opción se coloca directamente la imagen*/
+    background-image: url('./assets/fondoPagina.jpg');
+    /*background-repeat: no-repeat;*/
+    background-position: center;
+    background-size: cover;/*que ocupe toda la pantalla de ancho*/
+    height: 100vh;/*que de alto cubra toda la pantalla*/
+}
+
+.indicaciones{
+    background: linear-gradient(rgb(15, 111, 253, 1), rgba(15, 111, 253, 0.5));
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+
+.regresar1{
+    background: linear-gradient(rgb(15, 111, 253, 1), rgba(15, 111, 253, 0.5));
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+}
+
+
+
+/*
+.content-input input[type=radio]{
+    height: 30px;
+    width: 30px;
+}
+*/
+/*
+label{
+    font-size: 1.2rem;
+}
+*/
